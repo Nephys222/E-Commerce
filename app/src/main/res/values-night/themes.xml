@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Ecommerce" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_md_theme_dark_primary</item>
+        <item name="colorPrimaryVariant">@color/blue_md_theme_dark_onPrimaryContainer</item>
+        <item name="colorOnPrimary">@color/blue_md_theme_dark_onPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_md_theme_dark_primary</item>
+        <item name="colorSecondaryVariant">@color/blue_md_theme_dark_onPrimaryContainer</item>
+        <item name="colorOnSecondary">@color/blue_md_theme_dark_onPrimary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/blue_md_theme_light_onPrimary</item>
+        <item name="titleTextColor">@color/blue_md_theme_light_onPrimary</item>
+    </style>
+</resources>
