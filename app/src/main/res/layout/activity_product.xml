@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ProductActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:titleEnabled="false"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:toolbarId="@id/toolbar">
+
+            <RelativeLayout
+                android:id="@+id/small_slider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignBottom="@+id/pager"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/transparent"/>
+
+            </RelativeLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorOnPrimary"
+        android:src="@drawable/ic_baseline_star"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_margin="16dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/my_common_info_CarProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/my_price_main_CarProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_common_info_CarProductDetails"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/my_city_main_CarProductDetails"
+                        android:text="London"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_price_main_CarProductDetails"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/my_date_carProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/my_city_main_CarProductDetails"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/my_city_main_CarProductDetails"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/my_viewImage_CarProductDetails"
+                        android:layout_width="20dp"
+                        android:layout_height="16dp"
+                        android:layout_alignTop="@+id/my_city_main_CarProductDetails"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/my_date_carProductDetails"
+                        android:scaleType="fitCenter"
+                        android:src="@android:drawable/ic_menu_view"
+                        android:backgroundTint="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/my_view_count_carProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/my_city_main_CarProductDetails"
+                        android:layout_toEndOf="@+id/my_viewImage_CarProductDetails"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/darker_gray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:descendantFocusability="blocksDescendants"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="25dp">
+
+                    <ImageView
+                        android:id="@+id/my_info_image_CarProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:backgroundTint="?attr/colorOnPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/my_info_image_CarProductDetails"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toEndOf="@+id/my_info_image_CarProductDetails"
+                        android:text="General Information"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/my_city_label_CarProductDetails"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_info_image_CarProductDetails"
+                        android:layout_marginTop="10dp"
+                        android:text="Location:"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/my_city_CarProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="London"
+                        android:layout_alignBottom="@+id/my_city_label_CarProductDetails"
+                        android:layout_toEndOf="@+id/my_city_label_CarProductDetails" />
+
+                    <TextView
+                        android:id="@+id/my_seller_phone_label_CarProductDetails"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_city_label_CarProductDetails"
+                        android:layout_marginTop="10dp"
+                        android:text="Seller:"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/my_seller_phone_CarProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dell"
+                        android:layout_alignBottom="@+id/my_seller_phone_label_CarProductDetails"
+                        android:layout_toEndOf="@+id/my_seller_phone_label_CarProductDetails" />
+
+                    <TextView
+                        android:id="@+id/my_description_CarProductDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_seller_phone_CarProductDetails"
+                        android:text="@string/dummy_text"
+                        android:layout_marginTop="20dp"
+                        android:autoLink="web"
+                        android:paddingBottom="80dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

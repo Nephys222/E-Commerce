@@ -11,9 +11,6 @@ import androidx.core.view.MenuProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.nilearning.ecommerce.ui.ViewPagerAdapter
 import com.nilearning.ecommerce.databinding.ActivityMainBinding
-import com.nilearning.ecommerce.ui.CategoryFragment
-import com.nilearning.ecommerce.ui.ChosenFragment
-import com.nilearning.ecommerce.ui.TrendingFragment
 
 class MainActivity : AppCompatActivity() {
 

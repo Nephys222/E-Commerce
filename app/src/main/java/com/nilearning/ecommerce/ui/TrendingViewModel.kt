@@ -22,7 +22,6 @@ class TrendingViewModel : ViewModel() {
             val response = try {
                 RetrofitInstance.commerceApi.getAllImages(1, 10)
             } catch (e: IOException) {
-                println(e)
                 Log.e(TAG(), "IOException, you might not have internet connection")
                 return@launch
             } catch (e: HttpException) {

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/my_collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            ads:contentScrim="?attr/colorPrimary"
+            ads:expandedTitleMarginEnd="64dp"
+            ads:expandedTitleMarginStart="48dp"
+            ads:layout_scrollFlags="exitUntilCollapsed"
+            ads:titleEnabled="false">
+
+            <RelativeLayout
+                android:id="@+id/small_slider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    ads:layout_collapseMode="parallax" />
+
+                <LinearLayout
+                    android:id="@+id/layout_dots"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/my_custom_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                ads:layout_collapseMode="pin"
+                ads:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/my_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorOnPrimary"
+        ads:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/my_common_info_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/my_price_main_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_common_info_CarProductDetails"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/my_city_main_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_price_main_CarProductDetails"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/my_date_carProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/my_city_main_CarProductDetails"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/my_city_main_CarProductDetails"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/my_viewImage_CarProductDetails"
+                    android:layout_width="20dp"
+                    android:layout_height="16dp"
+                    android:layout_alignTop="@+id/my_city_main_CarProductDetails"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/my_date_carProductDetails"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:backgroundTint="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/my_view_count_carProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/my_city_main_CarProductDetails"
+                    android:layout_toEndOf="@+id/my_viewImage_CarProductDetails"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingStart="15dp"
+                android:paddingEnd="25dp">
+
+                <ImageView
+                    android:id="@+id/my_info_image_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_dialog_info"
+                    android:backgroundTint="?attr/colorOnPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/my_info_image_CarProductDetails"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_toEndOf="@+id/my_info_image_CarProductDetails"
+                    android:text="Info"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/my_city_label_CarProductDetails"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_info_image_CarProductDetails"
+                    android:layout_marginTop="10dp"
+                    android:text="city"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/my_city_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/my_city_label_CarProductDetails"
+                    android:layout_toEndOf="@+id/my_city_label_CarProductDetails" />
+
+                <TextView
+                    android:id="@+id/my_seller_phone_label_CarProductDetails"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_city_label_CarProductDetails"
+                    android:layout_marginTop="10dp"
+                    android:text="Seller"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/my_seller_phone_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/my_seller_phone_label_CarProductDetails"
+                    android:layout_toEndOf="@+id/my_seller_phone_label_CarProductDetails" />
+
+                <TextView
+                    android:id="@+id/my_status_CarProductDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_seller_phone_label_CarProductDetails"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:id="@+id/my_description_CarProductDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_status_CarProductDetails"
+                    android:layout_marginTop="20dp"
+                    android:autoLink="web"
+                    android:paddingBottom="80dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
